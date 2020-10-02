@@ -1,0 +1,15 @@
+<h2>Welcome to TempNotes!</h2>
+<div>
+    <label>Enter reference Id of your note: </label>
+    <input type="text" [(ngModel)]="refId" />
+    <div>
+        <button *ngIf="refId" (click)= "navigateToDisplay()">Display</button>
+    </div>
+</div>
+<div>
+    <h3>Rules:</h3>
+    <ul>
+        <li>All Notes will be deleted on the last day of the month at midnight!</li>
+        <li><strong>Save the referece id for getting your notes in the future</strong></li>
+    </ul>
+</div>
