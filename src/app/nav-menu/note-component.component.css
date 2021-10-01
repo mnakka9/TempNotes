@@ -1,0 +1,13 @@
+header {
+  background-color: #0e568c;
+}
+.navbar-brand {
+  color: white;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.nav-item{
+  color: white;
+  font-weight: 500;
+}

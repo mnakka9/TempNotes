@@ -15,6 +15,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { HomeComponent } from './home/home.component';
 import { NotesAPIService } from './services/notes-api.service';
 import { NavMenuComponent } from './nav-menu/nav-menu-component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu-component';
     EditNoteComponent,
     DisplayRefComponent,
     HomeComponent,
-    NavMenuComponent
+    NavMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu-component';
     EditorModule,
     HttpClientModule,
     ClipboardModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [NotesAPIService],
   bootstrap: [AppComponent]

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TempNotes"
+    }
+  },
+  "defaultProject": "TempNotes",
+  "cli": {
+    "analytics": false
+  }
 }

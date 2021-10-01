@@ -1,15 +1,35 @@
-<h2>Welcome to TempNotes!</h2>
-<div>
-    <label>Enter reference Id of your note: </label>
-    <input type="text" [(ngModel)]="refId" />
-    <div>
-        <button *ngIf="refId" (click)= "navigateToDisplay()">Display</button>
-    </div>
+<div class="welcometite">
+  <h2>Welcome to TempNotes!</h2>
 </div>
-<div>
-    <h3>Rules:</h3>
-    <ul>
-        <li>All Notes will be deleted on the last day of the month at midnight!</li>
-        <li><strong>Save the referece id for getting your notes in the future</strong></li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Note</h5>
+          <p class="card-text"><label>Enter reference Id of your note: </label></p>
+          <input type="text" [(ngModel)]="refId" />
+          <div>
+            <button class="flat-butt flat-info-butt" *ngIf="refId" (click)="navigateToDisplay()">Display</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row emptyDiv"></div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Rules:</h3>
+          <div class="card-text">
+            <ul>
+              <li>All Notes will be deleted on the last day of the month at midnight!</li>
+              <li><strong>Save the referece id for getting your notes in the future</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

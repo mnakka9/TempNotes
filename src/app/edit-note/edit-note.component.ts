@@ -24,28 +24,28 @@ export class EditNoteComponent implements OnInit {
     if (noteHtml) {
       this.html = noteHtml;
     } else {
-      this.notesService.getNote(this.id).subscribe(
-        (result) => {
-          this.html = result.noteHtml;
-          localStorage.setItem(result.id, result.noteHtml);
-        },
-        (error) => console.log(error)
-      );
+      this.notesService.getNote(this.id).then((note) => {
+        this.html = note.noteHtml;
+        localStorage.setItem(note.id, note.noteHtml);
+        this.spinner.hide();
+      });
     }
   }
 
   ngOnSubmit(): void {
-    this.spinner.show();
-    this.notesService.EditNote({ id: this.id, noteHtml: this.html }).subscribe(
-      (result) => {
-        if (result.result) {
-          this.spinner.hide();
+    this.spinner.show('edit');
+    this.notesService
+      .EditNote({
+        id: this.id,
+        noteHtml: this.html,
+      })
+      .then((res) => {
+        if (res) {
+          this.spinner.hide('edit');
           alert('Note updated successfully!');
           localStorage.setItem(this.id, this.html);
           this.router.navigateByUrl('/home');
         }
-      },
-      (error) => console.log(error)
-    );
+      });
   }
 }

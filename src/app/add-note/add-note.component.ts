@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NotesAPIService } from '../services/notes-api.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Guid } from 'guid-typescript';
+import { Note } from '../Note';
+import { Router } from '@angular/router';
+import { NoteC } from 'src/NoteC';
 
 @Component({
   selector: 'app-add-note',
@@ -20,13 +23,14 @@ export class AddNoteComponent implements OnInit {
   ngOnInit(): void {}
 
   ngOnSubmit(): void {
-    this.spinner.show();
-    this.notesService.AddNote(this.html).subscribe(
-      (result) => {
-        this.spinner.hide();
-        this.router.navigateByUrl(`DisplayRef/${result.id}`);
-      },
-      (error) => console.log(error)
-    );
+    this.spinner.show('add');
+    let note: Note = new NoteC();
+    const id = Guid.create().toString();
+    note.id = id;
+    note.noteHtml = this.html;
+    this.notesService.AddNote(note).then((id) => {
+      this.spinner.hide('add');
+      this.router.navigateByUrl(`DisplayRef/${id}`);
+    });
   }
 }

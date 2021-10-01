@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  PARSE_APP_ID: 'IDgp8jiELpUpZaxRoGsyEmB2qnmnwp15sImHnJk0',
+  PARSE_JS_KEY: 'm7l4lfdF86extFb9gLPibUwz8wKQKbn7jTGEvKBy',
+  serverURL: 'https://parseapi.back4app.com'
+}
+
 
 /*
  * For easier debugging in development mode, you can import the following file
