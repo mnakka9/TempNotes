@@ -1,8 +1,12 @@
-    <div>
+    <div class="row">
+    <div class="col-sm-12">
         <h1>Add a new note</h1>
         <div>
             <em>Please copy the reference id provided to get your note at a later time</em>
         </div>
+      </div>
+      <div class="emptyDiv"></div>
+      <div class="row">
         <editor [(ngModel)]="html" name="html" apiKey="6s88a7kbwa38aq9510o0fdddijzt7wt55fwwyodraau7jdpp" initialValue="html"
             [init]="{
     height: 250,
@@ -19,7 +23,9 @@
       bullist numlist outdent indent | help'
   }">
         </editor>
+      </div>
     </div>
-    <div>
-        <button class="btnPrimary" (click)="ngOnSubmit()"> Save Note </button>
+    <div class="emptyDiv"></div>
+    <div class="col-sm-12">
+        <button class="flat-butt flat-primary-butt" (click)="ngOnSubmit()"> Save Note </button>
     </div>

@@ -1,4 +1,23 @@
-<h2>Reference Id: {{id}}</h2>
-<section class="content" *ngIf="html" [innerHTML]="html"></section>
-<div><ngx-spinner></ngx-spinner></div>
-<a href="/editnote/{{id}}"><button>Click to edit the note</button></a>
+<div class="row">
+  <h2>Reference Id: {{id}}</h2>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Note</h5>
+        <div class="card-text">
+          <section class="content" *ngIf="html" [innerHTML]="html"></section>
+          <div>
+            <ngx-spinner></ngx-spinner>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <a href="/editnote/{{id}}"><button class="flat-butt flat-primary-butt">Click to edit the note</button></a>
+  </div>
+</div>

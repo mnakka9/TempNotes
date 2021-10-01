@@ -27,7 +27,6 @@ export class EditNoteComponent implements OnInit {
       this.notesService.getNote(this.id).then((note) => {
         this.html = note.noteHtml;
         localStorage.setItem(note.id, note.noteHtml);
-        this.spinner.hide();
       });
     }
   }

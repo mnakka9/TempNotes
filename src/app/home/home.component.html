@@ -6,11 +6,16 @@
     <div class="col-sm-12">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Note</h5>
+          <h5 class="card-title">Get note!</h5>
           <p class="card-text"><label>Enter reference Id of your note: </label></p>
-          <input type="text" [(ngModel)]="refId" />
+          <input type="text" (change)="textChanged()" [(ngModel)]="refId" />
+          <div class="row emptyDiv"></div>
           <div>
             <button class="flat-butt flat-info-butt" *ngIf="refId" (click)="navigateToDisplay()">Display</button>
+          </div>
+          <div class="row emptyDiv"></div>
+          <div id="errorHome" >
+            <em *ngIf="error">Note doesn't exist in database</em>
           </div>
         </div>
       </div>
@@ -21,7 +26,7 @@
     <div class="col-sm-12">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title">Rules:</h3>
+          <h4 class="card-title">Rules!!</h4>
           <div class="card-text">
             <ul>
               <li>All Notes will be deleted on the last day of the month at midnight!</li>
