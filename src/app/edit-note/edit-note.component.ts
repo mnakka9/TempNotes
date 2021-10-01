@@ -43,7 +43,7 @@ export class EditNoteComponent implements OnInit {
           this.spinner.hide('edit');
           alert('Note updated successfully!');
           localStorage.setItem(this.id, this.html);
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/');
         }
       });
   }

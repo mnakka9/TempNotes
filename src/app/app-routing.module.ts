@@ -13,7 +13,6 @@ const routes: Routes = [
   { path: 'displaynote/:id', component: DisplayNoteComponent, pathMatch: 'full' },
   { path: 'OfflineNotes', component: OfflineNotesComponent, pathMatch: 'full' },
   { path: 'DisplayRef/:id', component: DisplayRefComponent, pathMatch: 'full' },
-  { path: '/', component: HomeComponent, pathMatch: 'full' },
   { path: '', component: HomeComponent, pathMatch: 'full'}
 ];
 
