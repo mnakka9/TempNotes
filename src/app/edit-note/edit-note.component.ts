@@ -32,7 +32,7 @@ export class EditNoteComponent implements OnInit {
   }
 
   ngOnSubmit(): void {
-    this.spinner.show('edit');
+    this.spinner.show();
     this.notesService
       .EditNote({
         id: this.id,
@@ -40,7 +40,7 @@ export class EditNoteComponent implements OnInit {
       })
       .then((res) => {
         if (res) {
-          this.spinner.hide('edit');
+          this.spinner.hide();
           alert('Note updated successfully!');
           localStorage.setItem(this.id, this.html);
           this.router.navigateByUrl('/');

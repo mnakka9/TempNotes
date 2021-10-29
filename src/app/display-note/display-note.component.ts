@@ -15,7 +15,7 @@ export class DisplayNoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.spinner.show('display');
+    this.spinner.show();
     this.getNote();
   }
 
@@ -23,11 +23,12 @@ export class DisplayNoteComponent implements OnInit {
     const noteHtml = localStorage.getItem(this.id);
     if (noteHtml) {
       this.html = noteHtml;
+      this.spinner.hide();
     } else {
       this.notesService.getNote(this.id).then((note) => {
         this.html = note.noteHtml;
         localStorage.setItem(note.id, note.noteHtml);
-        this.spinner.hide('display');
+        this.spinner.hide();
       });
     }
   }

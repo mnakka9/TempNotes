@@ -23,13 +23,13 @@ export class AddNoteComponent implements OnInit {
   ngOnInit(): void {}
 
   ngOnSubmit(): void {
-    this.spinner.show('add');
+    this.spinner.show();
     let note: Note = new NoteC();
     const id = Guid.create().toString();
     note.id = id;
     note.noteHtml = this.html;
     this.notesService.AddNote(note).then((id) => {
-      this.spinner.hide('add');
+      this.spinner.hide();
       this.router.navigateByUrl(`DisplayRef/${id}`);
     });
   }
